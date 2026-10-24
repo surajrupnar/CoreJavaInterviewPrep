@@ -1,21 +1,35 @@
 package com.interview.programs.stream;
 
 import java.util.*;
-
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class Test {
+
+   public static boolean isPalindrome(String str){
+       int left = 0;
+       int right = str.length() - 1;
+
+       while(left < right){
+
+           if(str.charAt(left) != str.charAt(right)){
+               return false;
+           }
+           else{
+               left++;
+               right--;
+           }
+       }
+       return true;
+   }
+
     public static void main(String[] args) {
+        String str = "Suraj";
 
-          Stream.of("Java","kafka", "Spring").filter(n->n.length()>4).forEach(System.out::println);
-
-
-        //System.out.println(result);
-
-
-
-
+        str.toLowerCase()
+                .chars()
+                .filter(ch->"aeiou".indexOf(ch)>=0)
+                .forEach(ch->System.out.println((char) ch));
     }
 }
+
