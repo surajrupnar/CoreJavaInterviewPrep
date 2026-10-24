@@ -1,15 +1,16 @@
 package com.interview.programs.stream;
 
+import java.net.Inet4Address;
+
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.Iterator;
+import java.util.stream.Stream;
 
 public class RemoveDuplicateElement {
     public static void main(String[] args) {
-        List<Integer> arr = Arrays.asList(1, 1, 2, 2, 3, 4, 4);
-            Set<Integer> set =  new HashSet<>();
-        arr.stream().filter(n -> !set.add(n)).distinct().forEach(System.out::println);
-    }
+
+        Stream<Double> randamvalue = Stream.generate(Math::random).limit(5);
+        randamvalue.forEach(System.out::println);
+
+     }
 }
